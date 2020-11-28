@@ -79,7 +79,7 @@ func ParseSentence(raw string) (BaseSentence, error) {
 	var (
 		fieldsRaw   = raw[startIndex+1 : sumSepIndex]
 		fields      = strings.Split(fieldsRaw, FieldSep)
-		checksumRaw = strings.ToUpper(raw[sumSepIndex+1:])
+		checksumRaw = strings.ToUpper(raw[sumSepIndex+1:sumSepIndex+2])
 		checksum    = xorChecksum(fieldsRaw)
 	)
 	// Validate the checksum
